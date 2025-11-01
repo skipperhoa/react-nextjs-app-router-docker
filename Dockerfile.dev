@@ -1,0 +1,30 @@
+# Định nghĩa phiên bản Node.js
+ARG NODE_VERSION=22.14.0-alpine
+FROM node:${NODE_VERSION} AS base
+
+# Tạo và set thư mục làm việc trong container là app
+WORKDIR /app
+
+# Copy 2 file package.json trước để tận dụng cache khi build
+COPY package.json package-lock.json ./
+
+# Đổi quyền sở hữu thư mục /app cho user node (bảo mật quyền truy cập file)
+RUN chown -R node:node /app
+
+# Chuyển sang dùng user node thay vì root
+USER node
+
+#Cài đặt các dependencies từ package.json
+#--no-audit bỏ qua kiểm tra bảo mật trong quá trình cài đặt
+RUN npm install --no-audit
+
+# Copy toàn bộ code source vào container 
+# --chown=node:node đảm bảo files thuộc về user node
+COPY --chown=node:node . .
+
+# chỉ định cổng mà ứng dụng trong container sẽ lắng nghe và giao tiếp với bên ngoài.
+EXPOSE 3000
+
+# Lệnh khởi chạy ứng dụng Next.js ở chế độ development, 
+# Sử dụng khi container được start
+CMD ["npm", "run", "dev"]

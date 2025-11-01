@@ -1,0 +1,27 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev # Sử dụng Dockerfile.dev để build image cho môi trường development
+    container_name: chillcoding-react-nextjs # Tên container
+    command: npm run dev # Command to start the Next.js development server
+    ports:
+      - "3000:3000"  # Map port 3000 của container với port 3000 của máy host (máy thật)
+    volumes:
+      - .:/app # Mount thư mục hiện tại vào /app trong container
+      - /app/node_modules # Giữ node_modules của container độc lập
+    # https://docs.docker.com/compose/how-tos/file-watch/
+    # develop:  
+    #   watch:
+    #     - action: sync  # Theo dõi và đồng bộ thay đổi code để hot-reload
+    #       path: ./app # đường dẫn trên host (tương đối với thư mục project) mà bạn muốn theo dõi.
+    #       target: /app # đường dẫn trong container mà các file từ path sẽ được đồng bộ vào Docker container.
+    #       initial_sync: true # Đồng bộ ban đầu khi container khởi động
+    #       ignore: # danh sách các file/thư mục con không muốn theo dõi
+    #         - node_modules/ 
+        
+    #     - action: rebuild # khi file thay đổi, sẽ rebuild image rồi recreate container như docker compose up --build
+    #       path: package.json # File cần theo dõi để trigger rebuild
+    environment:
+      - NODE_ENV=development   # Thiết lập môi trường development ,có thể gọi trong code để check
+    restart: unless-stopped # Tự động khởi động lại container trừ khi dừng thủ công
