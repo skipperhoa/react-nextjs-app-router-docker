@@ -7,9 +7,12 @@ services:
     command: npm run dev # Command to start the Next.js development server
     ports:
       - "3000:3000"  # Map port 3000 của container với port 3000 của máy host (máy thật)
+      - "5555:5555" # npx prisma studio. -> 5555
     volumes:
       - .:/app # Mount thư mục hiện tại vào /app trong container
       - /app/node_modules # Giữ node_modules của container độc lập
+    depends_on:
+      - postgres_db
     # https://docs.docker.com/compose/how-tos/file-watch/
     # develop:  
     #   watch:
@@ -25,3 +28,26 @@ services:
     environment:
       - NODE_ENV=development   # Thiết lập môi trường development ,có thể gọi trong code để check
     restart: unless-stopped # Tự động khởi động lại container trừ khi dừng thủ công
+    networks:
+      - chillcode
+  postgres_db:
+        image: postgres:13.5
+        container_name: PostgresCount
+        restart: always
+        environment:
+            - POSTGRES_USER=hoadev
+            - POSTGRES_PASSWORD=hoadev123
+            - POSTGRES_DB=hoadev_db
+        volumes:
+            - postgres_db:/var/lib/postgresql/data
+        ports:
+            - '5432:5432' # host:port container
+        networks:
+          - chillcode
+
+volumes:
+  postgres_db:
+networks:
+  chillcode:
+    driver: bridge
+
