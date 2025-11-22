@@ -18,8 +18,8 @@ export default function NewPost() {
       },
     });
 
-    revalidatePath("/posts"); // Revalidate the posts page /posts
-    redirect("/posts"); // Redirect to the posts page
+    revalidatePath("/dashboard/posts"); // Revalidate the posts page /posts
+    redirect("/dashboard/posts"); // Redirect to the posts page
   }
 
   return (

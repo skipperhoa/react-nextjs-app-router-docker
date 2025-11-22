@@ -44,6 +44,13 @@ services:
             - '5432:5432' # host:port container
         networks:
           - chillcode
+  adminer:
+        image: adminer
+        restart: always
+        ports:
+          - 8080:8080 # host:port container localhost:8080
+        networks:
+          - chillcode
 
 volumes:
   postgres_db:
