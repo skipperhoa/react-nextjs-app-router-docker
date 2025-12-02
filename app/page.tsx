@@ -1,7 +1,7 @@
-import prisma from '@/lib/prisma'
+//import prisma from '@/lib/prisma'
 import Link from 'next/link';
 export default async function Users() {
-  const users = await prisma.user.findMany();
+ 
   return (
      <div className="min-h-screen w-full max-w-5xl m-auto px-10  flex flex-col items-center justify-center -mt-16">
         <div className='w-full flex flex-row gap-5 items-center justify-center'>
