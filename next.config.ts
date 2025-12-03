@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  output: "export", // standalone or export
+  output: "standalone", // standalone or export
 };
 
 export default nextConfig;

@@ -51,7 +51,7 @@ export default async function Post({ params }: { params: Promise<{ id: string }>
             <div className="w-full bg-gray-100 rounded-xl p-5 mb-2">
               <div className="w-full">
                   <label className="w-full font-bold text-blue-500 py-5">Content</label> 
-                  <input type="text" name="content" defaultValue={post.content} className="w-full p-3 rounded-md mt-2 mb-5 bg-gray-300"/>
+                  <input type="text" name="content" defaultValue={post.content as string} className="w-full p-3 rounded-md mt-2 mb-5 bg-gray-300"/>
               </div>
             </div>
             <div className="w-fullp-5 mb-2">
