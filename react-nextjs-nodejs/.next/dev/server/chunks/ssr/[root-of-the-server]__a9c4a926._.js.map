@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///Users/hoacode/Desktop/Developer/React/deploy-nextjs-with-nodejs/react-nextjs-nodejs/components/post/PostDelete.tsx"],"sourcesContent":["'use client';\nexport default function PostDelete({ id }: any) {\n  const deleteAction = async (id: any) => {\n    const res = await fetch(`http://localhost:9000/api/posts/${id}`, {\n      method: \"DELETE\",\n    });\n  };\n  return (\n    <button\n      className=\"ml-2 text-white bg-red-500 hover:bg-red-600 px-3 py-1 rounded-md\"\n      onClick={() => deleteAction(id)}\n    >\n      Delete\n    </button>\n  );\n}\n"],"names":[],"mappings":";;;;;AAAA;;AACe,SAAS,WAAW,EAAE,EAAE,EAAO;IAC5C,MAAM,eAAe,OAAO;QAC1B,MAAM,MAAM,MAAM,MAAM,CAAC,gCAAgC,EAAE,IAAI,EAAE;YAC/D,QAAQ;QACV;IACF;IACA,qBACE,8OAAC;QACC,WAAU;QACV,SAAS,IAAM,aAAa;kBAC7B;;;;;;AAIL","debugId":null}}]
+}

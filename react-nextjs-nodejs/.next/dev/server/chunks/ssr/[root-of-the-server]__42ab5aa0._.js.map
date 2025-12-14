@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///Users/hoacode/Desktop/Developer/React/deploy-nextjs-with-nodejs/react-nextjs-nodejs/components/posts/PostDelete.tsx"],"sourcesContent":["\"use client\";\nimport { mutate } from \"swr\";\nexport default function PostDelete({ id }: any) {\n  const deleteAction = async () => {\n    const res = await fetch(\n      process.env.NEXT_PUBLIC_API_URL + \"/api/posts/\" + id,\n      {\n        method: \"DELETE\",\n      }\n    );\n    if (!res.ok) {\n      throw new Error(\"Failed to delete post\");\n    }\n   // mutate(process.env.NEXT_PUBLIC_API_URL + \"/api/posts\");\n  };\n\n  return (\n    <button\n      className=\"ml-2 text-white bg-red-500 hover:bg-red-600 px-3 py-1 rounded-md\"\n      onClick={deleteAction}\n    >\n      Delete\n    </button>\n  );\n}\n"],"names":[],"mappings":";;;;;AAAA;;AAEe,SAAS,WAAW,EAAE,EAAE,EAAO;IAC5C,MAAM,eAAe;QACnB,MAAM,MAAM,MAAM,MAChB,4DAAkC,gBAAgB,IAClD;YACE,QAAQ;QACV;QAEF,IAAI,CAAC,IAAI,EAAE,EAAE;YACX,MAAM,IAAI,MAAM;QAClB;IACD,0DAA0D;IAC3D;IAEA,qBACE,8OAAC;QACC,WAAU;QACV,SAAS;kBACV;;;;;;AAIL","debugId":null}}]
+}

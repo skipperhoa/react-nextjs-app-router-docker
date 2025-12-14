@@ -1,0 +1,60 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev # Sử dụng Dockerfile.dev để build image cho môi trường development
+    container_name: chillcoding-react-nextjs # Tên container
+    command: npm run dev # Command to start the Next.js development server
+    ports:
+      - "3000:3000"  # Map port 3000 của container với port 3000 của máy host (máy thật)
+      - "5555:5555" # npx prisma studio. -> 5555
+    volumes:
+      - .:/app # Mount thư mục hiện tại vào /app trong container
+      - /app/node_modules # Giữ node_modules của container độc lập
+    depends_on:
+      - postgres_db
+    # https://docs.docker.com/compose/how-tos/file-watch/
+    # develop:  
+    #   watch:
+    #     - action: sync  # Theo dõi và đồng bộ thay đổi code để hot-reload
+    #       path: ./app # đường dẫn trên host (tương đối với thư mục project) mà bạn muốn theo dõi.
+    #       target: /app # đường dẫn trong container mà các file từ path sẽ được đồng bộ vào Docker container.
+    #       initial_sync: true # Đồng bộ ban đầu khi container khởi động
+    #       ignore: # danh sách các file/thư mục con không muốn theo dõi
+    #         - node_modules/ 
+        
+    #     - action: rebuild # khi file thay đổi, sẽ rebuild image rồi recreate container như docker compose up --build
+    #       path: package.json # File cần theo dõi để trigger rebuild
+    environment:
+      - NODE_ENV=development   # Thiết lập môi trường development ,có thể gọi trong code để check
+    restart: unless-stopped # Tự động khởi động lại container trừ khi dừng thủ công
+    networks:
+      - chillcode
+  postgres_db:
+        image: postgres:13.5
+        container_name: PostgresCount
+        restart: always
+        environment:
+            - POSTGRES_USER=hoadev
+            - POSTGRES_PASSWORD=hoadev123
+            - POSTGRES_DB=hoadev_db
+        volumes:
+            - postgres_db:/var/lib/postgresql/data
+        ports:
+            - '5432:5432' # host:port container
+        networks:
+          - chillcode
+  adminer:
+        image: adminer
+        restart: always
+        ports:
+          - 8080:8080 # host:port container localhost:8080
+        networks:
+          - chillcode
+
+volumes:
+  postgres_db:
+networks:
+  chillcode:
+    driver: bridge
+

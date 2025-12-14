@@ -1,0 +1,12 @@
+services:
+  app_react_nextjs:
+    # Configuration for the Next.js service
+    #platform: linux/arm64
+    build:
+      context: . # Set the build context to the current directory
+      dockerfile: Dockerfile.export 
+    ports:
+      - "8000:80" # port_local:port_container
+    volumes:
+      - .:/app # Mount the current directory to /app in the container for real-time code updates
+   

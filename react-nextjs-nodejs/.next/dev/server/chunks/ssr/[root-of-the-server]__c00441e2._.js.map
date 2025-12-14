@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///Users/hoacode/Desktop/Developer/React/deploy-nextjs-with-nodejs/react-nextjs-nodejs/app/dashboard/posts/%5Bid%5D/page.tsx"],"sourcesContent":["import PostEdit from \"@/components/post/PostEdit\";\n\nexport default async function page({ params }: { params: Promise<{ id: string }> }) {\n  const { id } = await params;\n  const post = await fetch('http://localhost:9000/api/posts/'+id).then(res => res.json())\n  console.log(post) \n  return (\n    <div>\n         {/* <PostEdit post = {post} /> */}\n    </div>\n  )\n}\n"],"names":[],"mappings":";;;;;;AAEe,eAAe,KAAK,EAAE,MAAM,EAAuC;IAChF,MAAM,EAAE,EAAE,EAAE,GAAG,MAAM;IACrB,MAAM,OAAO,MAAM,MAAM,qCAAmC,IAAI,IAAI,CAAC,CAAA,MAAO,IAAI,IAAI;IACpF,QAAQ,GAAG,CAAC;IACZ,qBACE,8OAAC;;;;;AAIL","debugId":null}}]
+}

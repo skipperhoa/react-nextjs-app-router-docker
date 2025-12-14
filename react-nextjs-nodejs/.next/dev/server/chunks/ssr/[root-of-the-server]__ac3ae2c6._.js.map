@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///Users/hoacode/Desktop/Developer/React/deploy-nextjs-with-nodejs/react-nextjs-nodejs/app/dashboard/posts/new/page.tsx"],"sourcesContent":["\nimport PostCreate from \"@/components/post/PostCreate\"\nexport default async function page() {\n  return (\n     <div>\n       \n     \n\n     </div>\n  )\n}\n"],"names":[],"mappings":";;;;;;AAEe,eAAe;IAC5B,qBACG,8OAAC;;;;;AAMN","debugId":null}}]
+}
