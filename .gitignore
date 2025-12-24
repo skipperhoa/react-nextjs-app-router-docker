@@ -5,6 +5,8 @@
 /nodejs/node_modules
 /react-nextjs-nodejs/node_modules
 /react-nextjs
+/react-prisma
+/react-prisma/node_modules
 .vscode
 /.pnp
 .pnp.*
