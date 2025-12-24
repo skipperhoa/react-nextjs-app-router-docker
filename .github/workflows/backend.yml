@@ -50,7 +50,7 @@ jobs:
               uses: docker/build-push-action@v6
               with:
                   context: ./nodejs    
-                  file: ./Dockerfile # Explicitly point to the file
+                  file: ./nodejs/Dockerfile # Explicitly point to the file
                   target: test
                   tags: nodejs-app-test:latest
                   platforms: linux/amd64
