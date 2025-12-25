@@ -81,5 +81,5 @@ app.get('/', async (req, res) => {
 
 app.listen(port, () => {
     console.log(`✅ Server is running on http://localhost:${port}`)
-    console.log(`📡 Connecting to DB at: ${process.env.DB_HOST}`)
+    console.log(`📡 Connecting to DB at: ${process.env.POSTGRES_HOST}`)
 })

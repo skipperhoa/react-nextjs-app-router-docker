@@ -2,11 +2,11 @@ import pg from "pg";
 const { Pool } = pg;
 
 const pool = new Pool({
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  database: process.env.DB_NAME,
+  host: process.env.POSTGRES_HOST,
+  user: process.env.POSTGRES_USER,
+  password: process.env.POSTGRES_PASSWORD,
+  database: process.env.POSTGRES_DB,
+  port: process.env.POSTGRES_PORT || 5432,
 });
 pool.on('error', (err) => {
   console.error('🔥 Unexpected PG error', err);
