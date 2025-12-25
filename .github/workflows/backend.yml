@@ -145,6 +145,7 @@ jobs:
                       docker run -d \
                       --name ${{ secrets.DOCKERHUB_PROJECT_NAME }} \
                       --restart always \
+                      --network app-net \
                       -p 9000:9000 \
                       -e NODE_ENV=production \
                       -e POSTGRES_HOST=${{ secrets.PROD_DB_HOST }} \
