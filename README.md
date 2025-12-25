@@ -9,9 +9,16 @@ Example:
 ```
 
 📌 Cách CHUẨN HƠN (khuyên dùng): tạo network riêng
+
+
 🔧 Tạo network
 ```bash
 docker network create app-net
+```
+
+🔧 Dừng & xoá container cũ (KHÔNG mất data)
+```bash
+docker rm -f postgres-prod hoacode-nodejs-app
 ```
 
 🔧 Chạy Postgres
