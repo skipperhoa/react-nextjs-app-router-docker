@@ -29,7 +29,7 @@ app.get('/', async (req, res) => {
             time: result.rows[0].now,
             database: result.rows[0].current_database,
             user: result.rows[0].user,
-            host: process.env.POSTGRES_HOST || 'localhost'
+            host: process.env.DB_HOST || 'localhost'
         };
     } catch (err) {
         dbStatus = `🔴 Error: ${err.message}`;
