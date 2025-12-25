@@ -1,8 +1,9 @@
+import dotenv from 'dotenv'
+dotenv.config()
 import express from 'express'
 import cors from 'cors'
+console.log(process.env);
 import pool from './config/db.js' // Import pool để kiểm tra kết nối
-import dotenv from "dotenv";
-dotenv.config();
 // import routes
 import userRoutes from './routes/user.routes.js'
 import postRoutes from './routes/post.routes.js'
