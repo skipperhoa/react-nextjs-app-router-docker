@@ -1,8 +1,11 @@
-import dotenv from 'dotenv'
-dotenv.config()
+if (process.env.NODE_ENV !== 'production') {
+  const dotenv = await import('dotenv');
+  dotenv.config();
+  console.log(process.env);
+}
 import express from 'express'
 import cors from 'cors'
-console.log(process.env);
+
 import pool from './config/db.js' // Import pool để kiểm tra kết nối
 // import routes
 import userRoutes from './routes/user.routes.js'
@@ -31,7 +34,7 @@ app.get('/', async (req, res) => {
             time: result.rows[0].now,
             database: result.rows[0].current_database,
             user: result.rows[0].user,
-            host: process.env.DB_HOST || 'localhost'
+            host: process.env.POSTGRES_HOST || 'localhost'
         };
     } catch (err) {
         dbStatus = `🔴 Error: ${err.message}`;

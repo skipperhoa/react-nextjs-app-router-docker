@@ -1,0 +1,48 @@
+name: Deploy Next.js to VPS
+
+on:
+  repository_dispatch:
+    types: [backend_deployed]
+  push:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build & Push Next.js Image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./react-nextjs-nodejs
+          push: true
+          tags: |
+            ${{ secrets.DOCKER_USERNAME }}/nextjs-frontend:latest
+
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          script: |
+            docker pull ${{ secrets.DOCKER_USERNAME }}/nextjs-frontend:latest
+
+            docker stop nextjs-frontend || true
+            docker rm nextjs-frontend || true
+
+            docker run -d \
+              --name nextjs-frontend \
+              --restart always \
+              -p 3000:3000 \
+              -e NODE_ENV=production \
+              ${{ secrets.DOCKER_USERNAME }}/nextjs-frontend:latest

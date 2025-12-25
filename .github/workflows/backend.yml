@@ -11,6 +11,7 @@ jobs:
     test:
         name: Run Node.js Tests
         runs-on: ubuntu-latest
+       
 
         services:
             postgres:
@@ -157,3 +158,11 @@ jobs:
 
                       # Dọn dẹp các image cũ không dùng đến để tránh đầy ổ cứng
                       docker image prune -f
+                      
+            - name: Trigger frontend pipeline
+              run: |
+                curl -X POST \
+                  -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
+                  -H "Accept: application/vnd.github+json" \
+                  https://api.github.com/repos/${{ github.repository }}/dispatches \
+                  -d '{"event_type":"backend_deployed"}'
