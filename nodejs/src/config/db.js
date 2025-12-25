@@ -10,7 +10,10 @@ const pool = new Pool({
   port: process.env.DB_PORT,
   database: process.env.DB_NAME,
 });
-
+pool.on('error', (err) => {
+  console.error('🔥 Unexpected PG error', err);
+  process.exit(1);
+});
 export default pool;
 
 /*  import pkg from "pg";

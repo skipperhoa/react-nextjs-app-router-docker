@@ -1,7 +1,8 @@
 import express from 'express'
 import cors from 'cors'
 import pool from './config/db.js' // Import pool để kiểm tra kết nối
-
+import dotenv from "dotenv";
+dotenv.config();
 // import routes
 import userRoutes from './routes/user.routes.js'
 import postRoutes from './routes/post.routes.js'
@@ -79,5 +80,5 @@ app.get('/', async (req, res) => {
 
 app.listen(port, () => {
     console.log(`✅ Server is running on http://localhost:${port}`)
-    console.log(`📡 Connecting to DB at: ${process.env.POSTGRES_HOST}`)
+    console.log(`📡 Connecting to DB at: ${process.env.DB_HOST}`)
 })
