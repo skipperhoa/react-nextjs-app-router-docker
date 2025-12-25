@@ -4,7 +4,7 @@ const { Pool } = pg
 const pool = new Pool({
   user: 'hoadev',
   password: 'hoadev123',
-  host: 'localhost',
+  host: 'host.docker.internal',
   port: 5432,
   database: 'hoadev_db',
 })
