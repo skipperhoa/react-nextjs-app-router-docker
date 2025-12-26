@@ -123,9 +123,9 @@ jobs:
             - name: Trigger frontend pipeline
               run: |
                 curl -X POST \
-                  -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                  -H "Authorization: Bearer ${{ secrets.MY_PAT_TOKEN }}" \
                   -H "Accept: application/vnd.github+json" \
-                  https://api.github.com/repos/${{ github.repository }}/dispatches \
+                  -H "X-GitHub-Api-Version: 2022-11-28" \
+                  api.github.com \
                   -d '{"event_type":"backend_deployed"}'
 
-                  

@@ -54,7 +54,7 @@ host: 'postgres-prod'
 - name: Trigger frontend pipeline
               run: |
                 curl -X POST \
-                  -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                  -H "Authorization: token ${{ secrets.MY_PAT_TOKEN }}" \
                   -H "Accept: application/vnd.github+json" \
                   https://api.github.com/repos/${{ github.repository }}/dispatches \
                   -d '{"event_type":"backend_deployed"}'
