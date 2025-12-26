@@ -121,11 +121,12 @@ jobs:
                       docker image prune -f
                       
             - name: Trigger frontend pipeline
+              if: success()
               run: |
                 curl -X POST \
                   -H "Authorization: Bearer ${{ secrets.MY_PAT_TOKEN }}" \
                   -H "Accept: application/vnd.github+json" \
                   -H "X-GitHub-Api-Version: 2022-11-28" \
-                  api.github.com \
+                  https://api.github.com/repos/${{ github.repository }}/dispatches \
                   -d '{"event_type":"backend_deployed"}'
 
