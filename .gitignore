@@ -22,7 +22,8 @@
 # next.js
 /.next/
 /out/
-
+/react-nextjs-nodejs/.next/
+/react-nextjs-nodejs/out/
 # production
 /build
 

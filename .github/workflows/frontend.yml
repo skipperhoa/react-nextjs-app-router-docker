@@ -3,11 +3,13 @@ name: Deploy React + Next.js to VPS
 on:
   repository_dispatch:
     types: [backend_deployed]
-  push:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    defaults:
+          run:
+            working-directory: ./react-nextjs-nodejs 
     
     steps:
       - name: Checkout code
@@ -23,6 +25,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./react-nextjs-nodejs
+          file: ./react-nextjs-nodejs/Dockerfile.bun
           push: true
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/nextjs-frontend:latest
