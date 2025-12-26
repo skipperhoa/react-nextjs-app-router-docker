@@ -282,3 +282,14 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 ```
+---------------------
+Advanced CI/CD Pipeline
+This example demonstrates a complete CI/CD pipeline that includes:
+
+Code checkout
+Dependency installation with caching
+Linting and type checking (for TypeScript projects)
+Running tests with coverage
+Building the application
+Deploying to a staging environment on push to main
+Manual approval for production deployment
