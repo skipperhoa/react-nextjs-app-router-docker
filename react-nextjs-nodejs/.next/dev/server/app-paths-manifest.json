@@ -1,4 +1,7 @@
 {
+  "/dashboard/posts/[id]/page": "app/dashboard/posts/[id]/page.js",
+  "/dashboard/posts/new/page": "app/dashboard/posts/new/page.js",
+  "/dashboard/posts/page": "app/dashboard/posts/page.js",
   "/dashboard/users/page": "app/dashboard/users/page.js",
   "/page": "app/page.js"
 }

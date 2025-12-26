@@ -42,7 +42,7 @@ function PostEdit({ post }) {
     const updatePost = async (formData)=>{
         const title = formData.get("title");
         const content = formData.get("content");
-        const res = await fetch(`http://localhost:9000/api/posts/${post.id}`, {
+        const res = await fetch(("TURBOPACK compile-time value", "http://27.0.15.88:9000") + `/api/posts/${post.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -69,7 +69,7 @@ function PostEdit({ post }) {
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/post/PostEdit.tsx",
-                lineNumber: 27,
+                lineNumber: 28,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$form$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -88,7 +88,7 @@ function PostEdit({ post }) {
                                         children: "Title"
                                     }, void 0, false, {
                                         fileName: "[project]/components/post/PostEdit.tsx",
-                                        lineNumber: 35,
+                                        lineNumber: 36,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -98,18 +98,18 @@ function PostEdit({ post }) {
                                         className: "w-full p-3 rounded-md mt-2 mb-5 bg-gray-300"
                                     }, void 0, false, {
                                         fileName: "[project]/components/post/PostEdit.tsx",
-                                        lineNumber: 36,
+                                        lineNumber: 37,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/post/PostEdit.tsx",
-                                lineNumber: 34,
+                                lineNumber: 35,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/post/PostEdit.tsx",
-                            lineNumber: 33,
+                            lineNumber: 34,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -122,7 +122,7 @@ function PostEdit({ post }) {
                                         children: "Content"
                                     }, void 0, false, {
                                         fileName: "[project]/components/post/PostEdit.tsx",
-                                        lineNumber: 41,
+                                        lineNumber: 42,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -132,18 +132,18 @@ function PostEdit({ post }) {
                                         className: "w-full p-3 rounded-md mt-2 mb-5 bg-gray-300"
                                     }, void 0, false, {
                                         fileName: "[project]/components/post/PostEdit.tsx",
-                                        lineNumber: 42,
+                                        lineNumber: 43,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/post/PostEdit.tsx",
-                                lineNumber: 40,
+                                lineNumber: 41,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/post/PostEdit.tsx",
-                            lineNumber: 39,
+                            lineNumber: 40,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -154,29 +154,29 @@ function PostEdit({ post }) {
                                 children: "Update post"
                             }, void 0, false, {
                                 fileName: "[project]/components/post/PostEdit.tsx",
-                                lineNumber: 46,
+                                lineNumber: 47,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/post/PostEdit.tsx",
-                            lineNumber: 45,
+                            lineNumber: 46,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/post/PostEdit.tsx",
-                    lineNumber: 32,
+                    lineNumber: 33,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/post/PostEdit.tsx",
-                lineNumber: 30,
+                lineNumber: 31,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/post/PostEdit.tsx",
-        lineNumber: 26,
+        lineNumber: 27,
         columnNumber: 5
     }, this);
 }

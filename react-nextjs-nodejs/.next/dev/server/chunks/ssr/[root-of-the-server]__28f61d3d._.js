@@ -38,7 +38,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navi
 function PostDelete({ id }) {
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
     const deleteAction = async (id)=>{
-        const res = await fetch(("TURBOPACK compile-time value", "http://localhost:9000") + `/api/posts/${id}`, {
+        const res = await fetch(("TURBOPACK compile-time value", "http://27.0.15.88:9000") + `/api/posts/${id}`, {
             method: "DELETE"
         });
         if (!res.ok) {

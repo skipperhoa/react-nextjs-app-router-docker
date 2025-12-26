@@ -44,7 +44,7 @@ function PostCreate() {
         const content = formData.get("content");
         const authorId = 1;
         const published = false;
-        const res = await fetch(("TURBOPACK compile-time value", "http://localhost:9000") + "/api/posts", {
+        const res = await fetch(("TURBOPACK compile-time value", "http://27.0.15.88:9000") + "/api/posts", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
