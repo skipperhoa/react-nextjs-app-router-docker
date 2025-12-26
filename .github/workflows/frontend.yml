@@ -6,16 +6,19 @@ name: Deploy React + Next.js to VPS
 #   workflow_dispatch:
 on:
   workflow_run:
-    workflows: ["CI/CD"]  # Tên workflow backend (phải khớp chính xác)
+    workflows: ["CI/CD"]
     types:
       - completed
+    branches:
+      - origin/nodejs_react  # ✅ OK nếu đây là tên branch thật
   push:
-      branches: [origin/nodejs_react]
+    branches: [origin/nodejs_react]  # ✅ OK
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}  # Chỉ chạy khi backend thành công
+    # if: ${{ github.event.workflow_run.conclusion == 'success' }}  # Chỉ chạy khi backend thành công
     defaults:
           run:
             working-directory: ./react-nextjs-nodejs 
