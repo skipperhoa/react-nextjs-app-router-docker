@@ -1,10 +1,9 @@
 name: Deploy React + Next.js to VPS
 
 on:
-  # repository_dispatch:
-  #   types: [backend_deployed]
-  push:
-        branches: [origin/nodejs_react]
+  repository_dispatch:
+     types: [backend_deployed]
+  workflow_dispatch:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
