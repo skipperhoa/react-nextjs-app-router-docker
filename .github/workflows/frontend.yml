@@ -49,3 +49,5 @@ jobs:
               -p 3000:3000 \
               -e NODE_ENV=production \
               ${{ secrets.DOCKER_USERNAME }}/nextjs-frontend:latest
+
+              
