@@ -34,7 +34,6 @@ jobs:
           context: ./react-nextjs-nodejs
           file: ./react-nextjs-nodejs/Dockerfile
           push: true
-          platforms: linux/amd64,linux/arm64
           tags: |
               ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKERHUB_PROJECT_NAME_REACT }}:latest
               ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKERHUB_PROJECT_NAME_REACT }}:${{ steps.meta.outputs.SHORT_SHA }}
@@ -49,7 +48,7 @@ jobs:
           script: |
             # Login vào Docker Hub (để pull private image nếu có)
             echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-            
+
             # Pull image mới nhất từ Docker Hub
             docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKERHUB_PROJECT_NAME_REACT }}:latest
 
