@@ -25,7 +25,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./react-nextjs-nodejs
-          file: ./react-nextjs-nodejs/Dockerfile.bun
+          file: ./react-nextjs-nodejs/Dockerfile
           push: true
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/nextjs-frontend:latest
@@ -46,8 +46,8 @@ jobs:
             docker run -d \
               --name nextjs-frontend \
               --restart always \
+              --network app-net \  # ← Thêm dòng này
               -p 3000:3000 \
               -e NODE_ENV=production \
               ${{ secrets.DOCKER_USERNAME }}/nextjs-frontend:latest
 
-              
