@@ -56,11 +56,15 @@ jobs:
             docker stop ${{ secrets.DOCKERHUB_PROJECT_NAME_REACT }} || true
             docker rm ${{ secrets.DOCKERHUB_PROJECT_NAME_REACT }} || true
 
+            # Tạo network nếu chưa tồn tại
+            docker network ls | grep app-net || docker network create app-net
+
             docker run -d \
               --name ${{ secrets.DOCKERHUB_PROJECT_NAME_REACT }} \
               --restart always \
-              --network app-net \  # ← Thêm dòng này
+              --network app-net \
               -p 3000:3000 \
               -e NODE_ENV=production \
+              -e NEXT_PUBLIC_API_URL_SOCKET=http://${{ secrets.DOCKERHUB_PROJECT_NAME }}:9000 \
               ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKERHUB_PROJECT_NAME_REACT }}:latest
 
