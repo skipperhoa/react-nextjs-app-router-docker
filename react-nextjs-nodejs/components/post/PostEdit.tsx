@@ -7,7 +7,7 @@ export default function PostEdit({ post }: any) {
   const updatePost = async (formData: FormData) => {
     const title = formData.get("title") as string;
     const content = formData.get("content") as string;
-    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `/posts/${post.id}`, {
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `/api/posts/${post.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

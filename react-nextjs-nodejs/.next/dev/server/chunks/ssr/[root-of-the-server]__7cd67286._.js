@@ -42,7 +42,7 @@ function PostEdit({ post }) {
     const updatePost = async (formData)=>{
         const title = formData.get("title");
         const content = formData.get("content");
-        const res = await fetch(`http://localhost:9000/api/posts/${post.id}`, {
+        const res = await fetch(("TURBOPACK compile-time value", "http://localhost:9000") + `/api/posts/${post.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
