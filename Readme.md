@@ -1,4 +1,4 @@
-**CICD Node.js + React/Next.js to VPS** 
+## CICD Node.js + React/Next.js to VPS
 
 Thì vừa qua mình cũng xây dựng xong Node.js + React/Next.js , mọi thứ điều ổn định đúng không nào. Thì trong video này mình sẽ dùng CICD deploay project đến VPS 
 
