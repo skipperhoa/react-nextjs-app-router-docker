@@ -3,7 +3,6 @@ name: CI/CD Fullstack Application
 on:
   push:
     branches: [nodejs_react]
-
     
 jobs:
   backend-ci:
