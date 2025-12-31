@@ -1,0 +1,10 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/dashboard/posts/[id]/page": "/dashboard/posts/[id]",
+  "/dashboard/posts/new/page": "/dashboard/posts/new",
+  "/dashboard/posts/page": "/dashboard/posts",
+  "/dashboard/users/page": "/dashboard/users",
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/"
+}
