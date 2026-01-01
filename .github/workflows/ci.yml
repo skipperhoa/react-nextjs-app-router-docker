@@ -3,7 +3,7 @@ name: CI/CD Fullstack Application
 on:
   push:
     branches: [nodejs_react]
-    
+
 jobs:
   backend-ci:
     name: Run Node.js Tests
@@ -94,6 +94,7 @@ jobs:
               -e POSTGRES_DB=${{ secrets.PROD_DB_NAME }} \
               ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKERHUB_PROJECT_NAME }}:latest
 
+              
   frontend-deploy:
     name: Build & Deploy Frontend
     runs-on: ubuntu-latest
