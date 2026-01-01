@@ -1,9 +1,7 @@
 
 export default async function Users() {
   const users = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/users',{
-    next:{
-      revalidate:5
-    }
+     next: { revalidate: 0 }
   }).then((res) => res.json());
   
   return (

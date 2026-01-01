@@ -1,3 +1,23 @@
-[00:00:01.034] Server  LOG      ✓ Ready in 778ms
-[00:01:46.612] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:02.548] Server  LOG     {}
+[00:00:02.179] Server  LOG      ✓ Ready in 1599ms
+[00:00:15.044] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:16.307] Server  ERROR    ⨯ SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+[00:00:16.438] Browser ERROR   uncaughtError: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+[00:01:49.490] Server  LOG      ✓ Compiled in 97ms
+[00:01:49.793] Server  ERROR    ⨯ SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+[00:01:50.259] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:51.162] Browser ERROR   uncaughtError: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+[00:01:59.759] Server  ERROR    ⨯ SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+[00:01:59.932] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:59.932] Browser ERROR   uncaughtError: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+[00:02:00.847] Server  ERROR    ⨯ SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+[00:02:00.971] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:00.976] Browser ERROR   uncaughtError: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+[00:02:17.609] Server  ERROR    ⨯ SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+[00:02:17.817] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:17.817] Browser ERROR   uncaughtError: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+[00:03:37.050] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:38.983] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:45.057] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:45.846] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:46.501] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:46.999] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

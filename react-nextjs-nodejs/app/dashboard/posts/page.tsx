@@ -4,9 +4,7 @@ import Link from "next/link";
 import PostDelete from "@/components/post/PostDelete";
 export default async function Posts() {
   const posts = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/posts",{
-     next:{
-      revalidate:5
-    }
+      next: { revalidate: 0 }
   }).then((res) => res.json());
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center -mt-16 px-10">
