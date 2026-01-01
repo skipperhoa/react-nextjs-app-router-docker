@@ -1,6 +1,10 @@
 
 export default async function Users() {
-  const users = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/users').then((res) => res.json());
+  const users = await fetch(process.env.NEXT_PUBLIC_API_URL + '/api/users',{
+    next:{
+      revalidate:5
+    }
+  }).then((res) => res.json());
   
   return (
      <div className="min-h-screen w-full max-w-5xl m-auto px-10  flex flex-col items-center justify-center -mt-16">

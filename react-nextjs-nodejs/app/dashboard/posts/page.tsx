@@ -3,7 +3,11 @@
 import Link from "next/link";
 import PostDelete from "@/components/post/PostDelete";
 export default async function Posts() {
-  const posts = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/posts").then((res) => res.json());
+  const posts = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/posts",{
+     next:{
+      revalidate:5
+    }
+  }).then((res) => res.json());
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center -mt-16 px-10">
       <h1 className="text-4xl font-bold mb-8 font-[family-name:var(--font-geist-sans)] text-[#333333]">
