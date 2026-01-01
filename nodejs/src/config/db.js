@@ -2,11 +2,11 @@
 const { Pool } = pg
  
 const pool = new Pool({
-  user: proccess.env.PROD_DB_USER,
-  password: proccess.env.PROD_DB_PASSWORD,
-  host:proccess.env.PROD_DB_HOST,
-  port: proccess.env.PROD_DB_PORT || 5432,
-  database: proccess.env.PROD_DB_NAME,
+  user: 'hoadev',
+  password: 'hoadev123',
+  host: 'localhost',
+  port: 5432,
+  database: 'hoadev_db',
 })
 
 export default pool
